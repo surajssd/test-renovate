@@ -40,7 +40,8 @@
             ],
             "datasourceTemplate": "helm",
             "depNameTemplate": "nvidia/gpu-operator",
-            "versioningTemplate": "semver"
+            "versioningTemplate": "semver",
+            "registryUrlTemplate": "https://helm.ngc.nvidia.com/nvidia"
         }
     ]
 }
