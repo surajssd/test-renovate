@@ -17,17 +17,6 @@
                 "ubuntu"
             ],
             "enabled": false
-        },
-        {
-            "matchDatasources": [
-                "helm"
-            ],
-            "matchPackageNames": [
-                "nvidia/gpu-operator"
-            ],
-            "registryAliases": {
-                "https://helm.ngc.nvidia.com/nvidia": "https://helm.ngc.nvidia.com/nvidia"
-            }
         }
     ],
     "regexManagers": [
