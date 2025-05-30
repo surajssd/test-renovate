@@ -24,12 +24,13 @@
     },
     "customManagers": [
         {
+            "datasourceTemplate": "helm",
+            "depNameTemplate": "nvidia/gpu-operator",
+            "customType": "regex",
             "matchStrings": [
                 "GPU_OPERATOR_VERSION:=v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
             ],
-            "datasource": "helm",
-            "depName": "nvidia/gpu-operator",
-            "matchFilePatterns": [
+            "fileMatch": [
                 "tests/setup-infra/deploy-aks.sh"
             ]
         }
