@@ -21,16 +21,19 @@
     ],
     "regexManagers": [
         {
+            "registryUrlTemplate": "https://helm.ngc.nvidia.com/nvidia",
+            "depNameTemplate": "gpu-operator",
+            "datasourceTemplate": "helm",
+            "versioningTemplate": "semver",
             "fileMatch": [
-                "tests/setup-infra/deploy-aks.sh"
+                "tests/setup-infra/deploy-aks.sh",
+                "website/docs/configurations/02-gpu-drivers.md"
             ],
             "matchStrings": [
-                ": \"\\${GPU_OPERATOR_VERSION:=(?<currentValue>.*?)}\""
-            ],
-            "datasourceTemplate": "helm",
-            "depNameTemplate": "gpu-operator",
-            "versioningTemplate": "semver",
-            "registryUrlTemplate": "https://helm.ngc.nvidia.com/nvidia"
+                ": \"\\${GPU_OPERATOR_VERSION:=(?<currentValue>.*?)}\"",
+                "--version (?<currentValue>.*?)",
+                "https://github.com/NVIDIA/gpu-operator/blob/(?<currentValue>.*?)/deployments/gpu-operator/values.yaml"
+            ]
         }
     ]
 }
