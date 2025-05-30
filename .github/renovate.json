@@ -31,7 +31,7 @@
             ],
             "matchStrings": [
                 ": \"\\${GPU_OPERATOR_VERSION:=(?<currentValue>.*?)}\"",
-                "--version (?<currentValue>.*?)",
+                "--version[ ]+(?<currentValue>.*?)",
                 "https://github.com/NVIDIA/gpu-operator/blob/(?<currentValue>.*?)/deployments/gpu-operator/values.yaml"
             ]
         }
