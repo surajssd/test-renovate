@@ -21,7 +21,7 @@ fi
 # Versions
 : "${GPU_OPERATOR_VERSION:=v24.9.2}"
 : "${NETWORK_OPERATOR_VERSION:=v24.10.0}"
-: "${MPI_OPERATOR_VERSION:=v0.6.0}" # Latest version: https://github.com/kubeflow/mpi-operator/releases
+: "${MPI_OPERATOR_VERSION:=v0.5.0}" # Latest version: https://github.com/kubeflow/mpi-operator/releases
 
 function check_prereqs() {
     local prereqs=("kubectl" "helm" "az" "jq")
