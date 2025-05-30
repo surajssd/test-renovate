@@ -8,6 +8,15 @@
             "matchPackageNames": [
                 "vllm/vllm-openai"
             ]
+        },
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchPackageNames": [
+                "ubuntu"
+            ],
+            "enabled": false
         }
     ]
 }
