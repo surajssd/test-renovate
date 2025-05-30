@@ -19,8 +19,12 @@
             "enabled": false
         }
     ],
-    "registryAliases": {
-        "nvidia": "https://helm.ngc.nvidia.com/nvidia"
+    "helm": {
+        "registries": {
+            "nvidia": {
+                "url": "https://helm.ngc.nvidia.com/nvidia"
+            }
+        }
     },
     "customManagers": [
         {
