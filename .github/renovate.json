@@ -17,26 +17,30 @@
                 "ubuntu"
             ],
             "enabled": false
-        }
-    ],
-    "helm": {
-        "registries": {
-            "nvidia": {
-                "url": "https://helm.ngc.nvidia.com/nvidia"
+        },
+        {
+            "matchDatasources": [
+                "helm"
+            ],
+            "matchPackageNames": [
+                "nvidia/gpu-operator"
+            ],
+            "registryAliases": {
+                "https://helm.ngc.nvidia.com/nvidia": "https://helm.ngc.nvidia.com/nvidia"
             }
         }
-    },
-    "customManagers": [
+    ],
+    "regexManagers": [
         {
-            "datasourceTemplate": "helm",
-            "depNameTemplate": "nvidia/gpu-operator",
-            "customType": "regex",
-            "matchStrings": [
-                "GPU_OPERATOR_VERSION:=v(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-            ],
             "fileMatch": [
                 "tests/setup-infra/deploy-aks.sh"
-            ]
+            ],
+            "matchStrings": [
+                ": \"\\${GPU_OPERATOR_VERSION:=(?<currentValue>.*?)}\""
+            ],
+            "datasourceTemplate": "helm",
+            "depNameTemplate": "nvidia/gpu-operator",
+            "versioningTemplate": "semver"
         }
     ]
 }
