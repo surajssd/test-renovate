@@ -1,5 +1,5 @@
 # vllm image is also based on ubuntu:22.04
-FROM ubuntu:22.04 AS build-stage
+FROM ubuntu:24.04 AS build-stage
 
 WORKDIR /nvidia-tools
 
