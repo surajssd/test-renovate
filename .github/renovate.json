@@ -31,8 +31,23 @@
             ],
             "matchStrings": [
                 ": \"\\${GPU_OPERATOR_VERSION:=(?<currentValue>.*?)}\"",
-                "(?m)^\\s*--version (?<currentValue>v?[0-9.]+)",
-                "https://github.com/NVIDIA/gpu-operator/blob/(?<currentValue>.*?)/deployments/gpu-operator/values.yaml"
+                "https://github.com/NVIDIA/gpu-operator/blob/(?<currentValue>.*?)/deployments/gpu-operator/values.yaml",
+                "(?m)^\\s*--version (?<currentValue>v?[0-9.]+)"
+            ]
+        },
+        {
+            "registryUrlTemplate": "https://helm.ngc.nvidia.com/nvidia",
+            "depNameTemplate": "network-operator",
+            "datasourceTemplate": "helm",
+            "versioningTemplate": "semver",
+            "fileMatch": [
+                "tests/setup-infra/deploy-aks.sh",
+                "website/docs/configurations/01-network-operator.md"
+            ],
+            "matchStrings": [
+                ": \"\\${NETWORK_OPERATOR_VERSION:=(?<currentValue>.*?)}\"",
+                "https://github.com/Mellanox/network-operator/blob/(?<currentValue>.*?)/deployment/network-operator/values.yaml",
+                "(?m)^\\s*--version (?<currentValue>v?[0-9.]+)"
             ]
         }
     ]
